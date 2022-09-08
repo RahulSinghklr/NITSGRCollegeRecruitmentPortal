@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/NITSrinagar.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/applications.css">
+    <title>Applications</title>
+</head>
+<body>
+    <hr style="height: 4px; background-color: rgb(255, 94, 0);">
+    <div class="topBox">
+      <div class="collegeHeading">
+        <img class="branch" src="/images/nitsrinagar.png" alt="IT Department">
+        <h1 class="branchName"><%=Branch%></h1>
+        <p class="collageNamechange">(National Institute Of Technology Srinagar)</p>
+      </div>
+    </div>
+<div style="text-align: center;">
+        <form action="/<%=ComitteMember%>/home/<%=DifKey%>" method="post">
+            <button class="btn9" style="position: relative;bottom: 0.3rem;">Home</button>
+        </form>
+    </div>
+    <hr style="height: 4px; background-color: rgb(255, 94, 0);">
+
+
+    <!--Important Applicants Table-->
+<div style="text-align:center;padding: 20px;">
+    <table style="text-align: center; margin: auto; border-collapse:collapse;">
+        <thead>
+            <th>SR.No</th>
+            <th class="Applicant">Applicants</th>
+            <th class="ResearchArea">Research Area</th>
+            <th>View</th>
+            <th>Status</th>
+            <th>Points</th>
+            <th>Eligible</th>
+            <th class="remark">Remarks</th>
+        </thead>
+      <tbody>
+       <%for(var i=0; i<BSArray.length; i++){%>
+
+        <tr>
+            <td ><%=i+1%></td>
+            <td ><%=BSArray[i].APPlPERSONALDETAILS.APLNAME%></td>
+            <td><p style="word-break: break-all;width: 350px;">
+            <% if(BSArray[i].APPLRESEARCHPUBLICATIONSDETAILS!==null){%>
+        <%=BSArray[i].APPLRESEARCHPUBLICATIONSDETAILS[0].PAPERTITLE%>
+             <%}else{%>
+                Nothing To Show!
+             <%}%></p></td>
+           <td > <form action='/<%=ComitteMember%>/<%=Type%>/profile/<%=DifKey%>' method="POST">
+            
+                    <input type="text"value="<%=Type%>" name="type" hidden>
+               <input type="text" name="Cached" value="<%=BSArray[i].APPLID%>" hidden>
+               <button class="btn" type="submit">View Profile</button> </form>
+            </td>
+            <%var PercentS=((BSArray[i].Status.length)/20)*100 %>
+            <td style="text-align: center;">
+                <div class="probar">
+                    <div id="invalbar" style="width:<%=PercentS%>%;">  
+                    </div>
+                </div>
+                <p style="font-size: 0.6rem;"><%=Math.round((((BSArray[i].Status.length)/20)*100 + Number.EPSILON) * 100) / 100%>% Completed</p>
+            </td>
+            <td >
+            <%if(BSArray[i].Points===undefined){%>
+             <%=BSArray[i].Points%>
+           <% }else{%>
+                <%=Math.round(BSArray[i].Points*100)/100%>
+                <%  }%></td>
+            <td ><%=BSArray[i].Eligible%></td>
+            <td ><p style="word-break: break-all;width: 300px;"><%=BSArray[i].Remarks%></p></td>
+        </tr>
+        <%  }%>
+        
+
+      </tbody>
+    </table>
+<div style="padding: 10px;">
+   <form action="/<%=ComitteMember%>/<%=Type%>/JSONFILE/<%=DifKey%>" method="post">
+       <input value="<%=Type%>" name="TypeOf" hidden>
+    <button class="btn9">Generate Report</button>
+   </form>
+</div>
+</div>
+
+
+
+    <footer class="footer">
+        <p class="fooCol">NIT SRINAGAR</p>
+        <p id="Timer">12:00:00AM</p>
+        <p class="copyright">&copy;Copyright 2022</p>
+    
+    </footer>
+
+
+    <script src="/javascript/applications.js"></script>
+</body>
+</html>

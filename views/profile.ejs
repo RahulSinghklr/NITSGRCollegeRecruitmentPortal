@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/NITSrinagar.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+
+    <hr style="height: 4px; background-color: rgb(255, 94, 0);">
+    <div class="topBox">
+      <div class="collegeHeading">
+        <img class="branch" src="/images/nitsrinagar.png" alt="IT Department">
+        <h1 class="branchName"><%=Branch%></h1>
+        <p class="collageNamechange">(National Institute Of Technology Srinagar)</p>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <form action="/<%=ComitteMember%>/home/<%=DifKey%>" method="post">
+          <button class="btn4" style="position: relative;bottom: 0.3rem;">Home</button>
+      </form>
+  </div>
+    <hr style="height: 4px; background-color: rgb(255, 94, 0);">
+    <hr style="height:4px;background-color:white">
+    <div class="PersonalDetails">
+      <h1 style="text-decoration: underline; color: rgb(12, 121, 210);">Personal Details</h1>
+      <table style="margin: auto;">
+        <thead>
+          <tr>
+            <td colspan="2"><h3 style="text-decoration: underline;">APPLID:<%=APPLPROFILEDATA.APPLID%>:-</h3></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NAME:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.APLNAME%></td>
+            <td><strong>POSTNAME:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.POSTNAME%></td>
+          </tr>
+          <tr>
+            <td><strong>FATHERNAME:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.FATHERNAME%></td>
+         
+            <td><strong>DEPARTMENT:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.DEPTNAME%></td>
+          </tr>
+          <tr>
+            <td><strong>SPECALIST:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.SPECDETAILS%></td>
+            <td><strong>ADVTNO:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.ADVTNO%></td>
+          </tr>
+          <tr>
+            <td><strong>AGE:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.AGE%></td>
+            <td><strong>LEVEL:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.Level%></td>
+          </tr>
+          <tr>
+            <td><strong>GENDER:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.GENDER%></td>
+            <td><strong>CATEGORY:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.CATEGORY%></td>
+          </tr>
+          <tr>
+            <td><strong>DOB:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.BIRTHDATE%></td>
+            <td><strong>STATE:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.STATENAME%></td>
+          </tr>
+          <tr>
+            <td><strong>EMAIL:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.APLEMAIL%></td>
+            <td><strong>MOBILENO:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.APLMOBILE%></td>
+          </tr>
+          <tr>
+            <td><strong>ADHARNO:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.ADHARNO%></td>
+            <td><strong>PANNO:-</strong><%=APPLPROFILEDATA.APPlPERSONALDETAILS.PANNO%></td>
+          </tr>
+        </tbody>
+        
+      </table>
+        <div class="status">
+          <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+            <%var State1=false%>
+         <%  APPLPROFILEDATA.Status.forEach(function(state){%>
+        <%   if(state===1){ State1=true}%>
+        <% })%>
+        <%if(State1){%>
+         <input type="checkbox" name="PersonalDetails" value="1" style="width: 20px;height: 20px;" required checked> 
+       <% }else{%>
+         <input type="checkbox" name="PersonalDetails" value="1" style="width: 20px;height: 20px;" required>
+         <button class="btn1">Save Status</button>
+      <%  }%>
+          </form>
+           </div>
+    </div>
+  <hr style="height:4px;background-color:white">
+  
+<div class="qualifications">
+  <h1 style="text-decoration: underline; color: rgb(12, 121, 210);">Qualifications</h1>
+  <%if(APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS!==null){%>
+  <div class="UGQualification">
+    <h2 style="text-decoration: underline;">UGQualification</h2>
+   <div class="UGEducationalDetails">
+     <h4 style="text-decoration: underline;">UGEducationalDetails:-</h4>
+    <table style="margin: auto;">
+      <tbody>
+        <tr>
+          <td><strong>DEGREE NAME:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.DEGREENAME%></td>
+          <td><strong>BRANCH:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.BRANCH%></td>
+        </tr>
+        <tr>
+          <td><strong>YEAR OF PASSING:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.YEARPASS%></td>
+          <td><strong>BOARD/UNIVERSITY:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.BOARD_UNI%></td>
+        </tr>
+        <tr>
+          <td><strong>MARKS/CGPA:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.MARK_CGPA%></td>
+          <td><strong>MAX MARKS/CGPA:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.MAXMARK_CGPA%></td>
+        </tr>
+        <tr>
+          <td><strong>PERCENTAGE OF MARKS/CGPA:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.PERC_MARKS_CGPA%></td>
+          <td><strong>INSTITUTE NAME:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.INSTNAME%></td>
+        </tr>
+        <tr>
+          <td><strong>FROM DATE:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.FROMDATE%></td>
+          <td><strong>TO DATE:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.TODATE%></td>
+        </tr>
+        <tr>
+          <td><strong>BOARD/UNIVERSITY TYPE:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.BOARDUNI_TYPE%></td>
+          <td><strong>NIRF RANK:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGEDUCATIONALDETAILS.NIRF_RANK%></td>
+        </tr>
+      </tbody> 
+    </table>
+   </div>
+  </div>
+<%}%>
+  <hr style="height: 1px; background-color: black;">
+<!--PGQUALIFICATIONS-->
+<%if(APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS!==null){%>
+<div class="UGQualification">
+  <h2 style="text-decoration: underline;">PGQualification</h2>
+
+ <div class="UGEducationalDetails">
+   <h4 style="text-decoration: underline;">PGEducationalDetails:-</h4>
+
+  <table style="margin: auto;">
+    <tbody>
+      <tr>
+        <td><strong>DEGREE NAME:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.DEGREENAME%></td>
+        <td><strong>BRANCH:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.BRANCH%></td>
+      </tr>
+      <tr>
+        <td><strong>YEAR OF PASSING:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.YEARPASS%></td>
+        <td><strong>BOARD/UNIVERSITY:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.BOARD_UNI%></td>
+      </tr>
+      <tr>
+        <td><strong>MAX MARKS/CGPA:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.MAXMARK_CGPA%></td>
+        <td><strong>PERCENTAGE OF MARKS/CGPA:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.PERC_MARKS_CGPA%></td>
+      </tr>
+      <tr>
+        <td><strong>INST NAME:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.INSTNAME%></td>
+        <td><strong>SPECILIZATION:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGEDUCATIONALDETAILS.SPECIALIZATION%></td>
+      </tr>
+    </tbody> 
+  </table>
+ </div>
+
+</div>
+<%}%>
+
+<hr style="height: 1px; background-color: black;">
+<!--PHD DETAILS-->
+<%if(APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDDETAILS!==null){%>
+<div class="UGQualification">
+  <h2 style="text-decoration: underline;">PHdQualification</h2>
+
+ <div class="UGEducationalDetails">
+   <h4 style="text-decoration: underline;">PHDEducationalDetails:-</h4>
+
+  <table style="margin: auto;">
+    <tbody>
+      <tr>
+        <td><strong>PHD TITLE:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDDETAILS.PHDTITLE%></td>
+        <td><strong>AWARDED DATE:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDDETAILS.AWARDDATE%></td>
+      </tr>
+      <tr>
+        <td><strong>INSTITUTE/UNIVERSITY NAME:-</strong><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDDETAILS.UNIV_INSTNAME%></td>
+      </tr>
+    </tbody> 
+  </table>
+ </div>
+
+</div>
+<%}%>
+<div class="status">
+  <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+    <%var State2=false%>
+    <%  APPLPROFILEDATA.Status.forEach(function(state){%>
+   <%   if(state===2){ State2=true}%>
+   <% })%>
+   <%if(State2){%>
+      <input type="checkbox" name="PersonalDetails" value="2" style="width: 20px;height: 20px;" required checked>
+  <% }else{%>
+    <input type="checkbox" name="PersonalDetails" value="2" style="width: 20px;height: 20px;" required>
+    <button class="btn1">Save Status</button>
+  <%}%>
+  </form>
+</div>
+
+</div>
+<hr style="height:4px;background-color:white">
+<!--ELGIBILITY CHECK-->
+<hr style="height:1px;background-color:rgb(90, 88, 88)">
+<div class="elgibility">
+  <div>
+   <h2 style="color:rgb(35, 131, 215);padding: 5px;">Elgibility</h2>
+   <%if(APPLPROFILEDATA.Eligible===null){%>
+    <form class="elgibilityform" action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="post">
+  <div style="display: inline-block;position: relative;
+  right: 10px;">
+    <label style="position: relative;
+    bottom: 6px;
+    right: 3px;" for="">Yes</label><input style="width: 20px;" type="radio" value="Yes" name="elgible">
+  </div>
+  <div  style="display: inline-block;position: relative;
+  left: 10px;">
+    <label style="position: relative;
+    bottom: 6px;
+    right: 3px;" for="">No</label><input style="width: 20px;" type="radio" value="No" name="elgible">
+  </div> 
+                 <button class="btn4">Save</button>
+    </form>
+    <%}else if(APPLPROFILEDATA.Eligible==='Yes'){%>
+            <h3 style="color:rgb(35, 131, 215)">The Applicant Is Elgible</h3>
+            <%}%>  
+          </div>
+  <hr style="height:1px;background-color:rgb(90, 88, 88)">
+</div>
+<!--UGPROJECTS-->
+<div class="UGProject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">UGProjects</h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+<% if(APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGPROJECTDETAILS!==null){%>
+    <table  style="margin: auto;">
+      <thead>
+        <th>Project Title</th>
+        <th>Project Year</th>
+        <th>Marks</th>
+      </thead>
+      <tbody>
+       <% for(var i=0; i<(APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGPROJECTDETAILS.length); i++){%>
+         <tr>
+           <td><p style="word-break: break-all;width: 550px;">
+             <%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGPROJECTDETAILS[i].PROJTITLE%>
+           </p></td>
+           <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGPROJECTDETAILS[i].UGPROJYEAR%></td>
+         <%  if(APPLPROFILEDATA.Marks.UGMarks===null){%>
+            <td style="text-align: center;"> <input style="text-align: center;" type="number" name="MarksUG<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+          <%  if(i==0){ %>
+              <td rowspan="<%=APPLPROFILEDATA.QUALIFICATIONS.APPLUG.APPLUGPROJECTDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.UGMarks%></td>
+              <%} }%>
+            
+         </tr>
+        <%}%>
+      </tbody>
+    </table>
+  <%}%>
+  <%var State3=false%>
+    <%  APPLPROFILEDATA.Status.forEach(function(state){%>
+   <%   if(state===3){ State3=true}%>
+   <% })%>
+   <%if(State3){%>
+      <input type="checkbox" name="PersonalDetails" value="3" style="width: 20px;height: 20px;" required checked>
+  <% }else{%>
+    <input type="checkbox" name="PersonalDetails" value="3" style="width: 20px;height: 20px;" required>
+    <button class="btn1">Save Status</button>
+  <%}%>
+   
+    </form>
+  </div>
+</div>
+  <hr style="height:4px;background-color:white">
+  <!--PGDESERTIONDETAILS-->
+  <div class="UGProject">
+    <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">PGDesertation:-</h1>
+    <div class="status">
+      <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGDESERTATIONDETAILS!==null){%>
+      <table  style="margin: auto;">
+        <thead>
+          <th>PGDesertation Title</th>
+          <th>Student name</th>
+          <th>PGDesertation Year</th>
+          <th>Marks</th>
+        </thead>
+        <tbody>
+         <% for(var i=0; i<(APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGDESERTATIONDETAILS.length); i++){%>
+          <tr>
+            <td><p style="word-break: break-all;width: 550px;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGDESERTATIONDETAILS[i].DESTITLE%></p></td>
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGDESERTATIONDETAILS[i].NAMESTUDENT%></td>
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGDESERTATIONDETAILS[i].PGDESYEAR%></td>
+            <%  if(APPLPROFILEDATA.Marks.PGMarks===null){%>
+            <td  style="text-align: center;"> <input style="text-align: center;" type="number" name="MarksPG<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0"  max="10" step="0.01"></td>
+            <% }else{%>
+              <%  if(i==0){ %>
+                  <td rowspan="<%=APPLPROFILEDATA.QUALIFICATIONS.APPLPG.APPLPGDESERTATIONDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.PGMarks%></td>
+                  <%} }%>
+                
+          </tr>
+         <%}%>
+        </tbody>
+      </table>
+   
+    <%}%>
+    <%var State4=false%>
+    <%  APPLPROFILEDATA.Status.forEach(function(state){%>
+   <%   if(state===4){ State4=true}%>
+   <% })%>
+   <%if(State4){%>
+      <input type="checkbox" name="PersonalDetails" value="4" style="width: 20px;height: 20px;" required checked>
+  <% }else{%>
+    <input type="checkbox" name="PersonalDetails" value="4" style="width: 20px;height: 20px;" required>
+    <button class="btn1">Save Status</button>
+  <%}%>
+      </form>
+    </div>
+  </div>
+  <hr style="height:4px;background-color:white">
+  <!--PHDTHESIS-->
+  <div class="UGProject">
+    <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">PHDThesis</h1>
+    <div class="status">
+      <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS!==null){%>
+      <table  style="margin: auto;">
+        <thead>
+          <th>PHDThesis Title</th>
+          <th>Institute Name</th>
+          <th>Scholar Name</th>
+          <th>Thesis Date</th>
+          <th>Thesis Status</th>
+          <th>PHD Thesis Role</th>
+          <th>No:of CO-Supervisor</th>
+          <th>Marks</th>
+        </thead>
+        <tbody>
+         <% for(var i=0; i<(APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS.length); i++){%>
+          <tr>
+            <td><p style="word-break: break-all;width: 350px;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS[i].THESISTITLE%></p></td>
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS[i].INSTITUTENAME%></td>
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS[i].SCHOLARNAME%></td>
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS[i].THESISDATE%></td>  
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS[i].THESISSTATUS%></td>
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS[i].PHDROLE%></td>
+            <td style="text-align: center;"><%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS[i].NOCOSUPERVISER%></td>
+            <%  if(APPLPROFILEDATA.Marks.PHDMarks===null){%>
+            <td  style="text-align: center;"> <input style="text-align: center;" type="number" name="MarksPHD<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+            <% }else{%>
+              <%  if(i==0){ %>
+                  <td rowspan="<%=APPLPROFILEDATA.QUALIFICATIONS.APPLPHD.APPLPHDTHESISSUPERVISEDDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.PHDMarks%></td>
+                  <%} }%>
+                
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    <%}%>
+    <%var State5=false%>
+    <%  APPLPROFILEDATA.Status.forEach(function(state){%>
+   <%   if(state===5){ State5=true}%>
+   <% })%>
+   <%if(State5){%>
+      <input type="checkbox" name="PersonalDetails" value="5" style="width: 20px;height: 20px;" required checked>
+  <% }else{%>
+    <input type="checkbox" name="PersonalDetails" value="5" style="width: 20px;height: 20px;" required>
+    <button class="btn1">Save Status</button>
+  <%}%>
+     
+      </form>
+    </div>
+  </div>
+    <hr style="height:4px;background-color:white">
+<!--PATENETDETAILS-->
+<div class="patenet">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">Patenet Details</h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLPATENETDETAILS!==null){%>
+  <table style="margin: auto;">
+    <thead>
+      <th>Patenet Name</th>
+      <th>Registration No:</th>
+      <th>DateAward</th>
+        <th>Role In Patenet</th>
+        <th>Status</th>
+        <th>Marks Out Of 10</th>
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLPATENETDETAILS.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 300px;"><%=APPLPROFILEDATA.APPLPATENETDETAILS[i].PATENTNAME%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPATENETDETAILS[i].REGNO%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPATENETDETAILS[i].DATEAWARD%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPATENETDETAILS[i].PTROLE%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPATENETDETAILS[i].STATUS%></td>
+         <%  if(APPLPROFILEDATA.Marks.PatenetsMarks===null){%>
+         <td style="text-align: center;"><input style="text-align: center;" type="number" name="PatenetMarks<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+         <% }else{%>
+          <%  if(i==0){ %>
+              <td rowspan="<%=APPLPROFILEDATA.APPLPATENETDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.PatenetsMarks%></td>
+              <%} }%>
+            
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State6=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===6){ State6=true}%>
+<% })%>
+<%if(State6){%>
+  <input type="checkbox" name="PersonalDetails" value="6" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="6" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+
+<!--SPONCEREDPROJECTSDETAILS-->
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">SponsoredProjects Details</h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS!==null){%>
+  <table style="margin: auto;">
+    <thead>
+      <th>Sponceredproject Title</th>
+      <th>Sponceredproject Agency</th>
+      <th>FromDate</th>
+        <th>ToDate</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Role In Sponceredproject</th>
+        <th>No:Of Co-Investigators</th>
+        <th>Marks</th>
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].SPTITLE%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].SPAGENCY%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].FROMDATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].TODATE%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].AMOUNT%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].SPSTATUS%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].SPROLE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS[i].NO_COINVESTIGATORS%></td>
+         <%  if(APPLPROFILEDATA.Marks.SponsoredMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="SponsoredMarks<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLSPONCEREDPROJECTSDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.SponsoredMarks%></td>
+                <%} }%>
+              
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State7=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===7){ State7=true}%>
+<% })%>
+<%if(State7){%>
+  <input type="checkbox" name="PersonalDetails" value="7" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="7" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+ 
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<!--CONSULTANCYPROJECTS-->
+
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">Consultancy Details</h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS!==null){%>
+  <table style="margin: auto;">
+    <thead>
+      <th>Project Title</th>
+      <th>Funding Agency</th>
+      <th>FromDtae</th>
+        <th>ToDate</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Role In Consultancy Project</th>
+        <th>Marks</th>
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS[i].PROJNAME%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS[i].FUNDAGENCY%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS[i].FROMDATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS[i].TODATE%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS[i].AMOUNT%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS[i].CPSTATUS%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS[i].ROLE%></td>
+         <%  if(APPLPROFILEDATA.Marks.ConsultancyMarks===null){%>
+         <td style="text-align: center;"> <input style="text-align: center;" type="number" name="ConsultancyMarks<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+         <% }else{%>
+          <%  if(i==0){ %>
+              <td rowspan="<%=APPLPROFILEDATA.APPLCONSULTANCYPROJECTDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.ConsultancyMarks%></td>
+              <%} }%>
+            
+    </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%> 
+<%var State8=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===8){ State8=true}%>
+<% })%>
+<%if(State8){%>
+  <input type="checkbox" name="PersonalDetails" value="8" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="8" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<!--RESEARCHPUBLICATIONS-->
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">RESEARCHPUBLICATIONS</h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS!==null){%>
+  <table style="margin: auto;">
+    <thead>
+      <th>Research Type</th>
+      <th>Research Category</th>
+      <th>PaperTitle</th>
+        <th>Journal Name</th>
+        <th>Research Place</th>
+        <th>Research Year</th>
+        <th>Volume</th>
+        <th>Research Status</th>
+        <th>No:Of Authors</th>
+        <th>Marks</th>
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS.length); i++){%>
+      <tr>
+        <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].RESTYPE%></td>
+        <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].RESCAT%></td>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].PAPERTITLE%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].JOURNALNAME%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].RESEARCHPLACE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].RESEARCHYEAR%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].VOLUME%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].RESEARCHSTATUS%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS[i].NOAUTHOR%></td>
+         <%  if(APPLPROFILEDATA.Marks.ResPubMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="ResearchPublication<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLRESEARCHPUBLICATIONSDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.ResPubMarks%></td>
+                <%} }%>
+              
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State9=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===9){ State9=true}%>
+<% })%>
+<%if(State9){%>
+  <input type="checkbox" name="PersonalDetails" value="9" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="9" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<!--BOOKPUBLICATIONS-->
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">BOOKPUBLICATIONS</h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>BookTitle</th>
+      <th>Publication Name</th>
+        <th>Published(National/InterNational)</th>
+        <th>PublicationType</th>
+        <th>Published Year</th>
+        <th>Year Edition</th>
+        <th>Marks</th>
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS[i].BOOKTITLE%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS[i].PUBNAME%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS[i].PUBTYPE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS[i].PUBLICATIONTYPE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS[i].PUBYEAR%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS[i].YEAREDITION%></td>
+    
+         <%  if(APPLPROFILEDATA.Marks.BookPubMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="BookPublication<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLBOOKPUBLICATIONDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.BookPubMarks%></td>
+                <%} }%>
+              
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+
+<%var State10=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===10){ State10=true}%>
+<% })%>
+<%if(State10){%>
+  <input type="checkbox" name="PersonalDetails" value="10" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="10" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<!--conference-->
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">CONFERENE ORGANISED</h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLCONFERENEORGANISED!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>Conference Title</th>
+      <th> Conference Level</th>
+        <th>Form Date</th>
+        <th>To Date</th>
+        <th>Conference Place</th>
+        <th>Conference Role</th>
+        <th>Marks</th>
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLCONFERENEORGANISED.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLCONFERENEORGANISED[i].CONFTITLE%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONFERENEORGANISED[i].CONFLEVEL%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONFERENEORGANISED[i].FROMDATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONFERENEORGANISED[i].TODATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONFERENEORGANISED[i].CONFPLACE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLCONFERENEORGANISED[i].COROLE%></td>
+         <%  if(APPLPROFILEDATA.Marks.ConferenceOrgMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="Conference<%=i+1%>" class="MarksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLCONFERENEORGANISED.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.ConferenceOrgMarks%></td>
+                <%} }%>
+              
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State11=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===11){ State11=true}%>
+<% })%>
+<%if(State11){%>
+  <input type="checkbox" name="PersonalDetails" value="11" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="11" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+
+<hr style="height:4px;background-color:white">
+<!--APPLNATIONALPROGRAMORGANISED-->
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">NATIONAL PROGRAM ORGANISED </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>Program Title</th>
+      <th> Program Type</th>
+      <th>No:Of Week</th>
+        <th>Form Date</th>
+        <th>To Date</th>
+        <th>Program Place</th>
+        <th>Program Role</th>
+        <th>Marks</th>
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED[i].PROGTITLE%></p></td>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED[i].PROGTYPE%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED[i].NO_WEEK%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED[i].FROMDATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED[i].TODATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED[i].PROGPLACE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED[i].NPOROLE%></td>
+         <%  if(APPLPROFILEDATA.Marks.NationalProMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="NationalProgramorganised<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLNATIONALPROGRAMORGANISED.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.NationalProMarks%></td>
+                <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State12=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===12){ State12=true}%>
+<% })%>
+<%if(State12){%>
+  <input type="checkbox" name="PersonalDetails" value="12" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="12" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+ 
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<!--APPLOUTREACHACTIVITY-->
+
+
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">OUTREACH ACTIVITY </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+      <%if(APPLPROFILEDATA.APPLOUTREACHACTIVITY!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>Name Of Activity</th>
+      <th> Role Name</th>
+      <th>Given By</th>
+        <th>Out Year</th>
+        <th>Marks</th>
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLOUTREACHACTIVITY.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLOUTREACHACTIVITY[i].NAMEACTIVITY%></p></td>
+        
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLOUTREACHACTIVITY[i].ROLENAME%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLOUTREACHACTIVITY[i].GIVENBY%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLOUTREACHACTIVITY[i].OUTYEAR%></td>
+        
+         <%  if(APPLPROFILEDATA.Marks.OutreachActMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="OutReachActivity<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLOUTREACHACTIVITY.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.OutreachActMarks%></td>
+                <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State13=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===13){ State13=true}%>
+<% })%>
+<%if(State13){%>
+  <input type="checkbox" name="PersonalDetails" value="13" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="13" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+ 
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+
+<!-- ADMMINSTRATIVE ACTIVITIES-->
+
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">ADMINISTRATIVE ACTIVITIES  </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>Administrative Type</th>
+      <th> Organisation Name</th>
+      <th> Postsion</th>
+        <th>From Date </th>
+        <th>To Date </th>
+        <th>Working Nature </th>
+        <th>Marks</th>
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES.length); i++){%>
+      <tr>
+        <td  style="text-align: center;"><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES[i].ADMTYPE%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES[i].ORGNAME%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES[i].POSTHELD%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES[i].FROMDATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES[i].TODATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES[i].WORKNATURE%></td>
+        
+         <%  if(APPLPROFILEDATA.Marks.AdmistrativeMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="AdministrativeActivity<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLADMINISTRATIVEACTIVITIES.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.AdmistrativeMarks%></td>
+                <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State14=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===14){ State14=true}%>
+<% })%>
+<%if(State14){%>
+  <input type="checkbox" name="PersonalDetails" value="14" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="14" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+ 
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+
+<!-- Work shop -->
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">FDP_STTP_STC_WORKSHOPS  </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>Workshop Title</th>
+      <th>No of Day</th>
+      <th> Work Category</th>
+        <th>From Date </th>
+        <th>To Date </th>
+        <th>Organisation Place </th>
+        <th>Workshop Role</th>
+        <th>Marks</th>
+        
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS[i].WORKTITLE%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS[i].NO_DAYS%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS[i].WORK_CATEGORY%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS[i].FROMDATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS[i].TODATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS[i].ORGPLACE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS[i].WSROLE%></td>
+         <%  if(APPLPROFILEDATA.Marks.FssWorkshopMarks===null){%>
+    
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="FDPWorkshop<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLFDP_STTP_STC_WORKSHOPS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.FssWorkshopMarks%></td>
+                <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State15=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===15){ State15=true}%>
+<% })%>
+<%if(State15){%>
+  <input type="checkbox" name="PersonalDetails" value="15" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="15" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+
+<hr style="height:4px;background-color:white">
+<!-- THEORYTEACHINGDETAILS-->
+
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">THEORY TEACHING DETAILS  </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLTHEORYTEACHINGDETAILS!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>Academic Year</th>
+      <th>Odd Sem</th>
+      <th> Even sem</th>
+      <th>Marks</th>
+
+        
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLTHEORYTEACHINGDETAILS.length); i++){%>
+      <tr>
+        <td style="text-align: center;position: relative;left: 2%;"><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLTHEORYTEACHINGDETAILS[i].ACDYEAR%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLTHEORYTEACHINGDETAILS[i].ODDSEMLOAD%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLTHEORYTEACHINGDETAILS[i].EVENSEMLOAD%></td>
+         <%  if(APPLPROFILEDATA.Marks.TeachingMarks===null){%>
+    
+         <td style="text-align: center;"> <input style="text-align: center;" type="number" name="THeoryTeachingDetails<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+         <% }else{%>
+          <%  if(i==0){ %>
+              <td rowspan="<%=APPLPROFILEDATA.APPLTHEORYTEACHINGDETAILS.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.TeachingMarks%></td>
+              <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State16=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===16){ State16=true}%>
+<% })%>
+<%if(State16){%>
+  <input type="checkbox" name="PersonalDetails" value="16" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="16" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+
+<hr style="height:4px;background-color:white">
+<!-- PRESENT EMPLOYER-->
+
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">PRESENT EMPLOYER </h1>
+  <%if(APPLPROFILEDATA.APPLPRESENTEMPLOYER!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      <th>Position</th>
+      <th>Organisation Name</th>
+      <th> Employer Type</th>
+        <th>From Date </th>
+        <th>Pay in Band </th>
+        <th>AGP </th>
+        <th>Basic Pay</th>
+        <th>Work Nature</th>
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLPRESENTEMPLOYER.length); i++){%>
+      <tr>
+        <td  style="text-align: center;"><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].POSTHELD%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].ORGNAME%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].EMPTYPE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].FROMDATE%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].PAYINBAND%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].AGP%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].BASICPAY%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPRESENTEMPLOYER[i].WORKNATURE%></td>
+        
+    
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<div class="status">
+  <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+    <%var State17=false%>
+    <%  APPLPROFILEDATA.Status.forEach(function(state){%>
+    <%   if(state===17){ State17=true}%>
+    <% })%>
+    <%if(State17){%>
+      <input type="checkbox" name="PersonalDetails" value="17" style="width: 20px;height: 20px;" required checked>
+    <% }else{%>
+    <input type="checkbox" name="PersonalDetails" value="17" style="width: 20px;height: 20px;" required>
+    <button class="btn1">Save Status</button>
+    <%}%>
+
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<!--APPLPROFFETIONALAFFILIATION  -->
+
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">PROFFETIONAL AFFILIATION </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLPROFFETIONALAFFILIATION!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      
+      <th>Organisation Name</th>
+      <th>Position</th>
+        <th>Remarks</th>
+        <th>Marks</th>
+        
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLPROFFETIONALAFFILIATION.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLPROFFETIONALAFFILIATION[i].ORGANISATION%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPROFFETIONALAFFILIATION[i].POSITIONHELD%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPROFFETIONALAFFILIATION[i].REMARKS%></td>
+         
+         <%  if(APPLPROFILEDATA.Marks.ProFFesionalMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="ProfessionalAffiltation<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLPROFFETIONALAFFILIATION.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.ProFFesionalMarks%></td>
+                <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State18=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===18){ State18=true}%>
+<% })%>
+<%if(State18){%>
+  <input type="checkbox" name="PersonalDetails" value="18" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="18" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<!-- APPLPLACEMENTPERCENTAGE-->
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">PLACEMENT PERCENTAGE </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLPLACEMENTPERCENTAGE!==null){%>
+  <table style="margin: auto;">
+    <thead>
+     
+      
+      <th>Academic Year</th>
+      <th>Student Place</th>
+        <th>Placement Percentage</th>
+        <th>Marks</th>
+        
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLPLACEMENTPERCENTAGE.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLPLACEMENTPERCENTAGE[i].ACDYEAR%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPLACEMENTPERCENTAGE[i].STUDENTPLACE%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLPLACEMENTPERCENTAGE[i].PLACPERCENTAGE%></td>
+         
+         <%  if(APPLPROFILEDATA.Marks.PlacementPercMarks===null){%>
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="PlacementPercentage<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLPLACEMENTPERCENTAGE.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.PlacementPercMarks%></td>
+                <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State19=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===19){ State19=true}%>
+<% })%>
+<%if(State19){%>
+  <input type="checkbox" name="PersonalDetails" value="19" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="19" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+
+<hr style="height:4px;background-color:white">
+<!--estabiSHMENT OF NEW  lAB  -->
+
+
+<div class="sponceredproject">
+  <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">ESTABLISHMENT OF NEWLAB </h1>
+  <div class="status">
+    <form action="/<%=ComitteMember%>/<%=TypeRemark%>/profile/<%=APPLPROFILEDATA.APPLID%>" method="POST">
+  <%if(APPLPROFILEDATA.APPLESTABLISHMENTOFNEWLAB!==null){%>
+  <table style="margin: auto;">
+    <thead>
+      <th>Dept Conc</th>
+      <th>Lab Est Name </th>
+      <th>Academic Year</th>
+      <th>No:Of Experiment</th>
+      <th>Marks</th>
+        
+    </thead>
+    <tbody>
+      <%for(var i=0; i<(APPLPROFILEDATA.APPLESTABLISHMENTOFNEWLAB.length); i++){%>
+      <tr>
+        <td><p style="word-break: break-all;width: 200px;"><%=APPLPROFILEDATA.APPLESTABLISHMENTOFNEWLAB[i].DEPTCONC%></p></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLESTABLISHMENTOFNEWLAB[i].NAMELABEST%></td>  
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLESTABLISHMENTOFNEWLAB[i].ACDYEAR%></td>
+         <td style="text-align: center;"><%=APPLPROFILEDATA.APPLESTABLISHMENTOFNEWLAB[i].NO_EXPERIMENT%></td>
+         <%  if(APPLPROFILEDATA.Marks.EstOfLabMarks===null){%>
+    
+          <td style="text-align: center;"> <input style="text-align: center;" type="number" name="NewEstablishmentOfLab<%=i+1%>" class="marksPatent" placeholder="Marks" required min="0" max="10" step="0.01" step="0.01"></td>
+          <% }else{%>
+            <%  if(i==0){ %>
+                <td rowspan="<%=APPLPROFILEDATA.APPLESTABLISHMENTOFNEWLAB.length%>" style="text-align: center; color: black; font-size: 2rem;">Total: <%=APPLPROFILEDATA.Marks.EstOfLabMarks%></td>
+                <%} }%>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+<%}%>
+<%var State20=false%>
+<%  APPLPROFILEDATA.Status.forEach(function(state){%>
+<%   if(state===20){ State20=true}%>
+<% })%>
+<%if(State20){%>
+  <input type="checkbox" name="PersonalDetails" value="20" style="width: 20px;height: 20px;" required checked>
+<% }else{%>
+<input type="checkbox" name="PersonalDetails" value="20" style="width: 20px;height: 20px;" required>
+<button class="btn1">Save Status</button>
+<%}%>
+  </form>
+</div>
+</div>
+<hr style="height:4px;background-color:white">
+<%var AppStatsCompleted=0%>
+<%APPLPROFILEDATA.Status.forEach(function(State){%>
+<%  AppStatsCompleted+=State})%>
+ <%if(AppStatsCompleted===210){%>
+<div class="Remark">
+<form action='/<%=ComitteMember%>/Remarks/Save/<%=DifKey%>' method="post">
+  <% var Sum=(APPLPROFILEDATA.Marks.UGMarks+APPLPROFILEDATA.Marks.PGMarks+APPLPROFILEDATA.Marks.PHDMarks+APPLPROFILEDATA.Marks.PatenetsMarks+APPLPROFILEDATA.Marks.SponsoredMarks+APPLPROFILEDATA.Marks.ConsultancyMarks+APPLPROFILEDATA.Marks.BookPubMarks+APPLPROFILEDATA.Marks.ResPubMarks+APPLPROFILEDATA.Marks.ConferenceOrgMarks+APPLPROFILEDATA.Marks.NationalProMarks+APPLPROFILEDATA.Marks.OutreachActMarks+APPLPROFILEDATA.Marks.AdmistrativeMarks+APPLPROFILEDATA.Marks.FssWorkshopMarks+APPLPROFILEDATA.Marks.TeachingMarks+APPLPROFILEDATA.Marks.ProFFesionalMarks+APPLPROFILEDATA.Marks.PlacementPercMarks+APPLPROFILEDATA.Marks.EstOfLabMarks)%>
+  <input type="text" value="<%=TypeRemark%>" name="type" hidden>
+  <input type="text" value="<%=APPLPROFILEDATA.APPLID%>" name="AplID" hidden>
+  <input type="number" value="<%=Sum%>" name="Points" hidden>
+ <h1  style="text-decoration: underline; color: rgb(12, 121, 210);">Remarks</h1>
+ <%if(APPLPROFILEDATA.Remarks===null){%>
+  <textarea class="textarearemark" id="" name="remark" rows="7" style="padding: 5px;" cols="100" placeholder="Please Write Your Remarks..." required></textarea>
+  <br>
+  <button type="submit" class="btn3">Submit Remarks</button>
+  <%}else{%>
+   <p style="padding:1rem;"><%=APPLPROFILEDATA.Remarks%></p>
+<% }%>
+</form>
+</div>  
+<%}else{%>
+  <p style="padding: 10px; text-align: center; font-size: 2rem;">Please Complete All Status To Activate Remarks Box</p>
+<%}%>
+<hr style="height:4px;background-color:white">
+    <script src="javascript/profile.js"></script>
+</body>
+
+</html>

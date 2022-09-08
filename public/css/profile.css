@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+    font-family: 'PT Serif', serif;
+}
+
+
+.topBox{
+    margin-top: 0.5px;
+    text-align: center;
+}
+.branch{
+    padding: 2px;
+    width: 60px;
+    height: 60px;
+}
+.branchName
+{
+    display: inline-block;
+    position: relative;
+    bottom: 15px;
+    color: rgb(34, 80, 174);
+}
+.collegeHeading{
+    display: inline-block;
+}
+.collageNamechange{
+    position: relative;
+    bottom: 20px;
+    left: 30px;
+}
+
+@media screen and (max-width:600px) {
+    .branch{
+        padding: 1px;
+        width: 40px;
+        height: 40px;
+
+
+    }
+    .branchName
+    {
+        display: inline-block; 
+        font-size: 20px;
+        position: relative;
+        bottom: 15px;
+        color: rgb(34, 80, 174);
+    }
+    .collageNamechange{
+        font-size: 10px;
+    }
+}
+/*personaldetails*/
+
+.PersonalDetails{
+    margin: 2px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border:2px solid grey;
+    border-radius: 1%;
+}
+
+td{
+    padding: 15px;
+    width: 20%;
+ 
+}
+.status{
+    display: inline-block;
+    padding: 10px;
+}
+/*
+.btn1 {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top,  #288bcd,#e3e5dd);
+    background-image: -moz-linear-gradient(top, #288bcd, #e2d7cb);
+    background-image: -ms-linear-gradient(top, #288bcd, #c9c3ae);
+    background-image: -o-linear-gradient(top, #288bcd, #ceb797);
+    background-image: linear-gradient(to bottom, #288bcd, #9d968b);
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 3px 3px 3px;
+   font-size: 17px;
+    text-decoration: none;
+    position: relative;
+    bottom: 7px;
+    border: 3px solid black;
+    color: rgb(18, 19, 19);
+    min-height: 3px;
+   
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+
+  }
+  
+  .btn1:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cfd56, #3498db);
+    background-image: -moz-linear-gradient(top, #3cfdbd, #3498db);
+    background-image: -ms-linear-gradient(top, #32c825, #3498db);
+    background-image: -o-linear-gradient(top, #39cd22, #3498db);
+    background-image: linear-gradient(to bottom, #44d65c, #3498db);
+    text-decoration: none;
+  }
+  */
+  .btn1 {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    position: relative;
+    bottom: 4px;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    min-height: 3px;
+    
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+
+  }
+  
+  .btn1:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+.qualifications{
+    margin: 2px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border:2px solid grey;
+    border-radius: 1%;
+
+}
+.UGQualification{
+    padding: 5px;
+
+}
+.UGEducationalDetails{
+    padding: 5px;
+}
+.patenet{
+    margin: 2px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border:2px solid grey;
+    border-radius: 1%;
+}
+input{
+    border-bottom: 1px solid black;
+    width: 50px;
+    height: 20px;
+
+
+}
+ textarea:focus, input:focus{
+        outline: none;
+ }
+
+ input[type=number]::-webkit-inner-spin-button, 
+ input[type=number]::-webkit-outer-spin-button { 
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     margin: 0; 
+ }
+
+.sponceredproject{
+    margin: 2px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border:2px solid grey;
+    border-radius: 1%;
+
+}
+
+.UGProject{
+    margin: 2px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border:2px solid grey;
+    border-radius: 1%;
+
+}
+
+
+
+
+.elgibility{
+    text-align: center;
+    padding: 5px;
+}
+.elgibilityform{
+    display: inline-block;
+}
+
+
+.Remark{
+    border:2px solid grey;
+    border-radius: 1%;
+    text-align: center;
+    
+}
+
+.textarearemark{
+    border: 1px solid black;
+    border-radius: 1%;
+}
+
+.btn3 {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+  }
+  
+  .btn3:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+
+  .btn4 {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 3px 3px 3px 3px;
+    text-decoration: none;
+    position: relative;
+    left: 1rem;
+    bottom: 0.2rem;
+  }
+  
+  .btn4:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+
+
+
+/*footer*/
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(37, 161, 223),rgb(164, 153, 153));
+    text-align: center;
+}
+.copyright{
+    padding: 2px;
+    color: white;
+}
+.fooCol{
+    padding: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    color: white;
+}
+#Timer {
+    padding: 2px;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    color: white;
+}

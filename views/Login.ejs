@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/NITSrinagar.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/Login.css">
+    <title>Login</title>
+</head>
+<body style="background-image: url('/images/nitsrinagarbackground.jpg'); background-size: cover; width: 100%; height: 100%;">
+
+
+    <div class="loginBox">
+        <h2 class="loginname">Login</h2>
+        <div class="imgbox">
+           <a href="https://nitsri.ac.in/" target="_blank"> <img class="collegeimage" src="/images/nitsrinagar.png" alt="nitsrinagar"></a>
+        </div>
+        
+<form action="/" method="POST">
+    <div class="UsernameI">
+        <label class="Username" for="Username">UserName</label>
+        <input class="uni" type="text" name="Username" placeholder=" Enter UserName" required autocomplete="off">
+    </div>
+    <div class="PasswordI">
+        <label class="Password" for="Password">Password</label>
+        <input class="pi" type="password" name="Password" placeholder=" Enter Password" required>
+      <!--  <span> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"  id="SE" class="bi bi-eye-slash-fill" viewBox="0 0 16 16"  onclick="ShowPass()">
+            <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+            <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="E" class="bi bi-eye-fill" viewBox="0 0 16 16"  onclick="ShowPass()">
+            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+          </svg>
+        </span>-->
+    </div>
+   <p class="errorL"><%=ShowText%></p>
+    <button type="submit" class="btn">Login</button>
+</form>
+    </div>
+
+
+    
+<!--footer-->
+<footer class="footer">
+    <p class="fooCol">NIT SRINAGAR</p>
+    <p id="Timer">12:00:00AM</p>
+    <p class="copyright">&copy;Copyright 2022</p>
+
+</footer>
+
+<script src="javascript/login.js"></script>
+</body>
